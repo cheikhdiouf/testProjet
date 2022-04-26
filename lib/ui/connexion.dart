@@ -14,15 +14,11 @@ class _LoginState extends State<Login> {
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: AppBar(
-        
         elevation: 0,
         brightness: Brightness.light,
         backgroundColor: Colors.white,
-        
       ),
-      body: Column
-      (
-        
+      body: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
           Column(
@@ -30,16 +26,17 @@ class _LoginState extends State<Login> {
               Row(
                 // mainAxisSize: MainAxisSize.max,
                 children: [
-                 Container(
+                  Container(
                     alignment: AlignmentDirectional.center,
                     margin: EdgeInsets.fromLTRB(105, 20, 50, 0),
                     height: 160,
                     width: 160,
-                    
-                    child: new Image.asset('assets/images/c982b0a21ed2f3c540da81565e2f7121f921e3c5.png'),
-                  ) 
+                    child: new Image.asset(
+                        'assets/images/c982b0a21ed2f3c540da81565e2f7121f921e3c5.png'),
+                  )
                 ],
               ),
+              // la creation des inputts identifiant et Mot de passe de l'utilisateur
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 40),
                 child: Column(
@@ -49,7 +46,7 @@ class _LoginState extends State<Login> {
                         decoration: InputDecoration(
                           hintText: "Identifiant",
                           hintStyle: TextStyle(
-                            color: Colors.blue, // <-- Change this
+                            color: Colors.blue, 
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
                           ),
@@ -64,10 +61,9 @@ class _LoginState extends State<Login> {
                         decoration: InputDecoration(
                           hintText: "Mot de passe",
                           hintStyle: TextStyle(
-                            color: Colors.blue, // <-- Change this
+                            color: Colors.blue, 
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
-                            
                           ),
                         ),
                       ),
@@ -81,12 +77,13 @@ class _LoginState extends State<Login> {
               SizedBox(
                 height: 12,
               ),
+              //button de validation du formulaire
               ElevatedButton(
                 child: Text("valider"),
-                 onPressed: () {
-                      //Navigator.pushNamed(context, '/changePasswd');
-                      Navigator.of(context).pushNamed('/coordonne');
-                    },
+                onPressed: () {
+                  
+                  Navigator.of(context).pushNamed('/coordonne');
+                },
                 style: ElevatedButton.styleFrom(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
@@ -101,9 +98,6 @@ class _LoginState extends State<Login> {
           ),
         ],
       ),
-
-
-      
     );
   }
 }

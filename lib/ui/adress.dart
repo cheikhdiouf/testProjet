@@ -12,15 +12,26 @@ class _AdresseState extends State<Adresse> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      
+      backgroundColor: Colors.white,
        appBar: AppBar(
-            backgroundColor: Colors.white10,
-            leading: IconButton(
-              icon: Icon(Icons.menu),
-              onPressed: () {},
-              tooltip: 'Menu',
-            ) //IconButton
+        leading: Icon(
+          Icons.menu,
+          color: Colors.blue,
+        ),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/images/80f276c903995b9c63decfcccb01ba22e198b73e.png',
+              fit: BoxFit.contain,
+              height: 32,
             ),
+          ],
+        ),
+        elevation: 0,
+        brightness: Brightness.light,
+        backgroundColor: Colors.white,
+      ),
       body: Center
     ( 
   //
@@ -37,15 +48,14 @@ class _AdresseState extends State<Adresse> {
             child: const ListTile(
               contentPadding:
                   EdgeInsets.symmetric(vertical: 30.0, horizontal: 16.0),
-              title: Text('http/Infos.house/sen/aid/ adresse',
-                  style: TextStyle(color: Color(0xff238c00))),
-              trailing: Icon(Icons.question_answer_outlined),
+              title: Text('Adresse plaque 06 Rue Abdoulaye Seck Marie Parsine, CP : 13000 Dakar, Sénégal',
+                  style: TextStyle(color: Colors.black)),
+              leading: Icon(Icons.home,),
             ),
           ),
 
-
-        
-				Flexible(
+SizedBox(height: 12,),
+        	Flexible(
 				flex: 1,
        
 				fit: FlexFit.tight,
@@ -57,7 +67,7 @@ class _AdresseState extends State<Adresse> {
 						child: Container(
 						decoration: BoxDecoration(
 							borderRadius: BorderRadius.circular(10),
-							color: Colors.white,
+							color: Colors.black12,
               
 						), //BoxDecoration
 						), //Container
@@ -71,7 +81,7 @@ class _AdresseState extends State<Adresse> {
 						child: Container(
 							decoration: BoxDecoration(
 						borderRadius: BorderRadius.circular(10),
-						color: Colors.greenAccent,
+									color: Colors.black12,
 						) //BoxDecoration
 							), //Container
 					) //Flexible
@@ -95,7 +105,7 @@ class _AdresseState extends State<Adresse> {
 						child: Container(
 						decoration: BoxDecoration(
 							borderRadius: BorderRadius.circular(10),
-							color: Colors.white,
+										color: Colors.black12,
 						), //BoxDecoration
 						), //Container
 					), //Flexible
@@ -110,7 +120,7 @@ class _AdresseState extends State<Adresse> {
 					height: 200,
 							decoration: BoxDecoration(
 						borderRadius: BorderRadius.circular(10),
-						color: Colors.greenAccent,
+									color: Colors.black12,
 						) //BoxDecoration
 							), //Container
 					) //Flexible
@@ -119,21 +129,7 @@ class _AdresseState extends State<Adresse> {
           
 ), //Row
 				),  
-        SizedBox(
-				height: 20,
-				),
-        //SizedBox
-				Flexible(
-				flex: 1,
-				fit: FlexFit.tight,
-				child: Container(
-					width: 380,
-					height: 200,
-					decoration: BoxDecoration(
-						borderRadius: BorderRadius.circular(10),
-						color: Colors.blue), //BoxDecoration
-				), //Container
-				), //Flexible
+       
 				SizedBox(
 				height: 20,
 				), //SizedBox
@@ -155,8 +151,15 @@ class _AdresseState extends State<Adresse> {
 			mainAxisAlignment: MainAxisAlignment.spaceBetween,
 			crossAxisAlignment: CrossAxisAlignment.center,
 			), //Column
+
+
+      
 		) //Padding
+    
 			), //Container
+
+
+      
 		) //Container
 
     );

@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home:Login(),
 
-
+// les differentes liens de navigation entre les pages 
       routes: <String, WidgetBuilder>{
         '/coordonne': (BuildContext context) => Coordonne(),
          '/qrcode': (BuildContext context) => Qrcode(),

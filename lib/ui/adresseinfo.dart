@@ -14,10 +14,22 @@ class _AdresseInfoState extends State<AdresseInfo> {
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: AppBar(
+         actions: <Widget>[
+    IconButton(
+      icon: Icon(
+        Icons.dangerous,
+        color: Colors.red,
+      ),
+      onPressed: () {
+        // do something
+      },
+    )
+  ],
         leading: Icon(
           Icons.menu,
           color: Colors.blue,
         ),
+        
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -37,9 +49,7 @@ class _AdresseInfoState extends State<AdresseInfo> {
       (
           child: Column(
         children: [
-
-
-          CircleAvatar(
+CircleAvatar(
             radius: 56,
   backgroundImage: NetworkImage("assets/images/f7873fe3bef5917129119ba893499c015fc881c5.png"),
 ),
