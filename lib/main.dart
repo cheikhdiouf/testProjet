@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:projet/adresseinfo.dart';
 import 'package:projet/ui/adress.dart';
 import 'package:projet/ui/connexion.dart';
+import 'package:projet/ui/coordonne.dart';
 import 'package:projet/ui/qrcode.dart';
+import 'package:projet/ui/scanner.dart';
 
 
 void main() {
@@ -23,8 +26,11 @@ class MyApp extends StatelessWidget {
 
 
       routes: <String, WidgetBuilder>{
-        '/qrcode': (BuildContext context) => Qrcode(),
+        '/coordonne': (BuildContext context) => Coordonne(),
+         '/qrcode': (BuildContext context) => Qrcode(),
+          '/scanner': (BuildContext context) => Scanner(),
         '/adresse': (BuildContext context) => Adresse(),
+        '/info': (BuildContext context) => AdresseInfo(),
       
       },
     );

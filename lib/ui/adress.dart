@@ -25,11 +25,23 @@ class _AdresseState extends State<Adresse> {
     ( 
   //
 	   	child: Container(
+         
 			child: Padding
       (
 			padding: const EdgeInsets.all(14.0),
 			child: Column(
 			children: <Widget>[
+        Card(
+            margin: const EdgeInsets.fromLTRB(50.0, 5.0, 40.0, 5.0),
+            color: Colors.white,
+            child: const ListTile(
+              contentPadding:
+                  EdgeInsets.symmetric(vertical: 30.0, horizontal: 16.0),
+              title: Text('http/Infos.house/sen/aid/ adresse',
+                  style: TextStyle(color: Color(0xff238c00))),
+              trailing: Icon(Icons.question_answer_outlined),
+            ),
+          ),
 
 
         
@@ -130,33 +142,11 @@ class _AdresseState extends State<Adresse> {
 				fit: FlexFit.tight,
 				child: Row(
 					children: <Widget>[
-					Flexible(
-						flex: 2,
-						fit: FlexFit.tight,
-						child: Container(
-						width: 180,
-						height: 300,
-						decoration: BoxDecoration(
-							borderRadius: BorderRadius.circular(10),
-							color: Colors.cyan,
-						), //BoxDecoration
-						), //Container
-					), //Flexible
+				 //Flexible
 					SizedBox(
 						width: 20,
 					), //SizedBox
-					Flexible(
-						flex: 2,
-						fit: FlexFit.tight,
-						child: Container(
-							width: 180,
-							height: 300,
-							decoration: BoxDecoration(
-							borderRadius: BorderRadius.circular(10),
-							color: Colors.cyan,
-							) //BoxDecoration
-							), //Container
-					) //Flexible
+				//Flexible
 					], //<Widget>[]
 					mainAxisAlignment: MainAxisAlignment.center,
 				), //Row

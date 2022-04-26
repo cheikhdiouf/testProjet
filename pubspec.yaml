@@ -48,6 +48,9 @@ flutter:
   assets:
       - assets/images/c982b0a21ed2f3c540da81565e2f7121f921e3c5.png
       - assets/images/80f276c903995b9c63decfcccb01ba22e198b73e.png
+      - assets/images/f7873fe3bef5917129119ba893499c015fc881c5.png
+      - assets/images/5106630ee91e6fd3c1a4f15303b5fc0ac68b170e.png
+      - assets/images/fin.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

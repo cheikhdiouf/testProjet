@@ -30,13 +30,14 @@ class _LoginState extends State<Login> {
               Row(
                 // mainAxisSize: MainAxisSize.max,
                 children: [
-                  Container(
+                 Container(
                     alignment: AlignmentDirectional.center,
                     margin: EdgeInsets.fromLTRB(105, 20, 50, 0),
                     height: 160,
                     width: 160,
+                    
                     child: new Image.asset('assets/images/c982b0a21ed2f3c540da81565e2f7121f921e3c5.png'),
-                  )
+                  ) 
                 ],
               ),
               Padding(
@@ -84,7 +85,7 @@ class _LoginState extends State<Login> {
                 child: Text("valider"),
                  onPressed: () {
                       //Navigator.pushNamed(context, '/changePasswd');
-                      Navigator.of(context).pushNamed('/qrcode');
+                      Navigator.of(context).pushNamed('/coordonne');
                     },
                 style: ElevatedButton.styleFrom(
                   padding:
