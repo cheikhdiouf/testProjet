@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projet/adresseinfo.dart';
+import 'package:projet/ui/adresseinfo.dart';
 import 'package:projet/ui/adress.dart';
 import 'package:projet/ui/connexion.dart';
 import 'package:projet/ui/coordonne.dart';
