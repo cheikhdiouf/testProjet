@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projet/database/connexindb.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -8,6 +9,15 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  late String _email;
+  late String _password;
+  final _formKey = GlobalKey<FormState>();
+
+  final dbHelper = DatabaseHelper.instance;
+  final myControllerEmail = TextEditingController();
+
+  final myControllerPassword = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,34 +29,30 @@ class _LoginState extends State<Login> {
         backgroundColor: Colors.white,
       ),
       body: Column(
+        key: _formKey,
         mainAxisSize: MainAxisSize.max,
         children: [
+          CircleAvatar(
+            radius: 70,
+            backgroundImage: AssetImage(
+                'assets/images/c982b0a21ed2f3c540da81565e2f7121f921e3c5.png'),
+          ),
+          SizedBox(
+            height: 13,
+          ),
           Column(
             children: [
-              Row(
-                // mainAxisSize: MainAxisSize.max,
-                children: [
-                  Container(
-                    alignment: AlignmentDirectional.center,
-                    margin: EdgeInsets.fromLTRB(105, 20, 50, 0),
-                    height: 160,
-                    width: 160,
-                    child: new Image.asset(
-                        'assets/images/c982b0a21ed2f3c540da81565e2f7121f921e3c5.png'),
-                  )
-                ],
-              ),
-              // la creation des inputts identifiant et Mot de passe de l'utilisateur
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 40),
                 child: Column(
                   children: [
                     ListTile(
                       title: TextField(
+                        controller: myControllerEmail,
                         decoration: InputDecoration(
                           hintText: "Identifiant",
                           hintStyle: TextStyle(
-                            color: Colors.blue, 
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
                           ),
@@ -58,10 +64,11 @@ class _LoginState extends State<Login> {
                     ),
                     ListTile(
                       title: TextField(
+                        controller: myControllerPassword,
                         decoration: InputDecoration(
                           hintText: "Mot de passe",
                           hintStyle: TextStyle(
-                            color: Colors.blue, 
+                            color: Colors.blue,
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
                           ),
@@ -81,8 +88,11 @@ class _LoginState extends State<Login> {
               ElevatedButton(
                 child: Text("valider"),
                 onPressed: () {
-                  
                   Navigator.of(context).pushNamed('/coordonne');
+                  _insertUser();
+
+                  print(_email);
+                  print(_password);
                 },
                 style: ElevatedButton.styleFrom(
                   padding:
@@ -99,5 +109,16 @@ class _LoginState extends State<Login> {
         ],
       ),
     );
+  }
+
+//INSERER LES INFORMATION DE L'UTILISATEUR
+  _insertUser() async {
+    Map<String, dynamic> row = {
+      DatabaseHelper.columnPassword: _password,
+      DatabaseHelper.columnEmail: _email
+    };
+    var dbHelper;
+    final id = await dbHelper.insertUser(row);
+    print(' utilisateur  a pour  id   $id');
   }
 }
